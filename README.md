@@ -258,3 +258,18 @@ Now the only need to do is reboot and logcat:
 ```
 
 ![modified](figures/modified.png)
+
+## Ex.1 About execute path
+
+`framework.jar` is only a library provided for Android developers. If you'd like to customize your `framework.jar` to make it more powerful, you might need to add some config files. Though build system tells us `Properties` is deprecated and not recommended, You can use `System.getProperty` to get `user.dir`:
+
+```java
+String dir = System.getProperty("user.dir");
+Log.i(TAG, dir);
+```
+
+You'll find **"/"**. It means that if your config file `config.xml` is located in `/system/framework`, you need use:
+
+```java
+File file = new File("./system/framework/config.xml");
+```
