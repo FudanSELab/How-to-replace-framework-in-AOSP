@@ -273,3 +273,19 @@ You'll find **"/"**. It means that if your config file `config.xml` is located i
 ```java
 File file = new File("./system/framework/config.xml");
 ```
+
+## Ex.2 About lint
+
+From Android 9, lint check executed when building. You can add `@hide` to disable lint check, which means you are telling building system that classes or methods decorated by it are only used in framework layer, which represents they won't exported as user API.
+
+```java
+/**
+ * @hide
+ */
+public class DelayMap.java {
+    // if @hide not existed, you'll be asked to add @NonNull or some other kinds of annotation on parameters.
+    public static boolean insertDelayPoint(String aName, String tName, DelayPoint dp) {
+        // ignore some code
+    }
+}
+```
