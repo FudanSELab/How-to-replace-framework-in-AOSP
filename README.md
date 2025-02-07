@@ -108,7 +108,7 @@ java_library {
 }
 ```
 
-**It's `framework-minus-apex` that gets installed to the device,** products of target `framework` not installed to the device. But it should be noticed that **the output file's name is still framework.jar**. And you can go to `framework-minux-apex`, you'd see:
+**It's `framework-minus-apex` that gets installed to the device,** products of target `framework` not installed to the device. But it should be noticed that **the output file's name is still framework.jar**. And you can go to `framework-minus-apex`, you'd see:
 
 ```bp
 java_library {
@@ -140,7 +140,7 @@ java_library {
 You can execute this command and get `framework.jar`:
 
 ```shell
-> make framework-minux-apex
+> make framework-minus-apex
 ```
 
 ![framework-build](figures/framework-build.png)
